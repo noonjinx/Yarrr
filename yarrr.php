@@ -272,7 +272,7 @@ class Yarrr
     public static function translateFilter($content)
     {
         $doc = new DOMDocument();
-        $doc->loadHTML($content);
+        $doc->loadHTML('<?xml encoding="UTF-8">' . $content);
         self::parseNode($doc);
         print $doc->saveHTML();
     }
